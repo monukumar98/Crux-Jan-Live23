@@ -1,46 +1,41 @@
-package Lec23;
+package Lec3;
 
 import java.util.Scanner;
 
-public class Pattern20 {
+public class Pattern16 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
 		int row = 1;
-		int space1 = n / 2;
-		int space2 = -1;
-		while (row <= n) {
+		int star = n;
+		int space = n - 1;
+		while (row <= 2 * n - 1) {
 			// space
 			int i = 1;
-			while (i <= space1) {
+			while (i <= space) {
 				System.out.print("  ");
 				i++;
 			}
 			// star
-			System.out.print("* ");
-			// between Space
 			int j = 1;
-			while (j <= space2) {
-				System.out.print("  ");
+			while (j <= star) {
+				System.out.print("* ");
 				j++;
 			}
-			// star
-			if (row >=2 && row < n) {
-				System.out.print("* ");
-			}
-			// next Row
+			// next Row Prep
 			// Mirror
-			if (row <= n / 2) {
-				space1--;
-				space2 += 2;
+			if (row < n) {
+				star--;
+				space--;
 			} else {
-				space1++;
-				space2 -= 2;
+				star++;
+				space++;
 			}
 			row++;
 			System.out.println();
+
 		}
 
 	}

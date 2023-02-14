@@ -1,8 +1,8 @@
-package Lec23;
+package Lec3;
 
 import java.util.Scanner;
 
-public class Pattern26 {
+public class Pattrern_Hard {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -11,7 +11,8 @@ public class Pattern26 {
 		int row = 1;
 		int star = 1;
 		int space = n - 1;
-		while (row <= n) {
+		int val = 1;
+		while (row <= 2 * n - 1) {
 			// space
 			int i = 1;
 			while (i <= space) {
@@ -20,19 +21,33 @@ public class Pattern26 {
 			}
 			// star
 			int j = 1;
-			int val = 1;
+			int p = val;
 			while (j <= star) {
-				System.out.print(val + " ");
-				val++;
+				System.out.print(p + " ");
+				if (j <= star / 2) {
+					p++;
+				} else {
+					p--;
+				}
 				j++;
 			}
 			// next Row Prep
-			System.out.println();
+			// Mirror
+			if (row < n) {
+				star += 2;
+				space--;
+				val++;
+			} else {
+				star -= 2;
+				space++;
+				val--;
+			}
 			row++;
-			star += 2;
-			space--;
+
+			System.out.println();
 
 		}
+
 	}
 
 }
