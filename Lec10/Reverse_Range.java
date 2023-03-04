@@ -1,5 +1,4 @@
 package Lec10;
-// https://leetcode.com/problems/rotate-array
 import java.util.Scanner;
 
 public class Reverse_Range {
