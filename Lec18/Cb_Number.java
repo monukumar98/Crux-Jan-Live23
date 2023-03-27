@@ -5,7 +5,7 @@ public class Cb_Number {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String s = "81615";
-		int n=90;
+		
 		System.out.println(PrintSubString(s));
 
 	}
