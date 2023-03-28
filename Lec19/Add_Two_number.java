@@ -16,6 +16,7 @@ public class Add_Two_number {
 		int i = arr1.length - 1;
 		int j = arr2.length - 1;
 		int carry = 0;
+		 
 		while (i >= 0 && j >= 0) {
 			int sum = arr1[i] + arr2[j] + carry;
 			ll.add(sum % 10);
