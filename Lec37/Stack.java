@@ -3,8 +3,8 @@ package Lec37;
 public class Stack {
 
 	
-	private int[] arr;
-	private int top = -1;
+	protected int[] arr;
+	protected  int top = -1;
 
 	public Stack() {
 		// TODO Auto-generated constructor stub
