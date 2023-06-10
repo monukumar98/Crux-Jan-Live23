@@ -1,6 +1,7 @@
-package Lec46;
+package Lec45;
 
-public class Flip_Equivalent_Binary_Trees {
+public class Symmetric_Tree {
+
 	public class TreeNode {
 		int val;
 		TreeNode left;
@@ -21,11 +22,11 @@ public class Flip_Equivalent_Binary_Trees {
 	}
 
 	class Solution {
-		public boolean flipEquiv(TreeNode root1, TreeNode root2) {
-			return Equiv(root1, root2);
+		public boolean isSymmetric(TreeNode root) {
+			return Symmetric(root.left, root.right);
 		}
 
-		public boolean Equiv(TreeNode root1, TreeNode root2) {
+		public boolean Symmetric(TreeNode root1, TreeNode root2) {
 			if (root1 == null && root2 == null) {
 				return true;
 			}
@@ -35,10 +36,9 @@ public class Flip_Equivalent_Binary_Trees {
 			if (root1.val != root2.val) {
 				return false;
 			}
-
-			boolean flip = Equiv(root1.left, root2.right) && Equiv(root1.right, root2.left);
-			boolean noflip = Equiv(root1.left, root2.left) && Equiv(root1.right, root2.right);
-			return flip || noflip;
+			boolean f1 = Symmetric(root1.left, root2.right);
+			boolean f2 = Symmetric(root1.right, root2.left);
+			return f1 && f2;
 		}
 	}
 

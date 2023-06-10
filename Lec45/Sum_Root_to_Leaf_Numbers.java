@@ -1,7 +1,6 @@
-package Lec46;
+package Lec45;
 
-public class Path_Sum {
-
+public class Sum_Root_to_Leaf_Numbers {
 	public class TreeNode {
 		int val;
 		TreeNode left;
@@ -22,18 +21,23 @@ public class Path_Sum {
 	}
 
 	class Solution {
-		public boolean hasPathSum(TreeNode root, int targetSum) {
+		public int sumNumbers(TreeNode root) {
+			return sum(root, 0);
+
+		}
+
+		public int sum(TreeNode root, int num) {
 			if (root == null) {
-				return false;
+				return 0;
 			}
 			if (root.left == null && root.right == null) {
-				return targetSum - root.val == 0;
+				return num * 10 + root.val;
 			}
 
-			boolean left = hasPathSum(root.left, targetSum - root.val);
-			boolean right = hasPathSum(root.right, targetSum - root.val);
-			return left || right;
+			int left = sum(root.left, num * 10 + root.val);
+			int right = sum(root.right, num * 10 + root.val);
+			return left + right;
+
 		}
 	}
-
 }

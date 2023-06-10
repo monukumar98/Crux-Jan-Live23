@@ -1,4 +1,4 @@
-package Lec46;
+package Lec45;
 
 public class LCA {
 	public class TreeNode {
