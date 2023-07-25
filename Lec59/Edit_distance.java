@@ -23,7 +23,7 @@ public class Edit_distance {
 			return t.length() - j;
 
 		}
-		if (j == s.length()) {
+		if (j == t.length()) {
 			return s.length() - i;
 
 		}
